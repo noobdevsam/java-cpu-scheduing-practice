@@ -1,3 +1,5 @@
+package model;
+
 public class ProcessInput {
 
     private final int pid;

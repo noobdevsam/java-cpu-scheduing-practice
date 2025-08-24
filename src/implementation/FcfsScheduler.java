@@ -1,7 +1,13 @@
+package implementation;
+
+import model.ProcessInput;
+import model.ProcessStats;
+import task.Scheduler;
+
 import java.util.*;
 
 /**
- * The `FcfsScheduler` class implements the `Scheduler` interface and provides
+ * The `implementation.FcfsScheduler` class implements the `task.Scheduler` interface and provides
  * a First-Come, First-Served (FCFS) scheduling algorithm for processes.
  * <p>
  * The FCFS scheduling algorithm schedules processes in the order of their
@@ -13,10 +19,10 @@ public class FcfsScheduler implements Scheduler {
     /**
      * Schedules the given list of processes using the FCFS scheduling algorithm.
      *
-     * @param processes A list of `ProcessInput` objects representing the processes
+     * @param processes A list of `model.ProcessInput` objects representing the processes
      *                  to be scheduled. Each process contains information such as
      *                  arrival time, burst time, and PID.
-     * @return A list of `ProcessStats` objects containing the scheduling results
+     * @return A list of `model.ProcessStats` objects containing the scheduling results
      * for each process, including their completion times.
      */
     @Override
@@ -46,7 +52,7 @@ public class FcfsScheduler implements Scheduler {
             statsMap.get(process.getPid()).setCompletionTime(currentTime);
         }
 
-        // Return the scheduling results as a list of ProcessStats
+        // Return the scheduling results as a list of model.ProcessStats
         return new ArrayList<>(statsMap.values());
     }
 

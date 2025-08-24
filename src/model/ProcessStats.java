@@ -1,3 +1,5 @@
+package model;
+
 public class ProcessStats extends ProcessInput {
 
     public int completionTime;
