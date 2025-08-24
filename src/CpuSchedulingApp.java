@@ -18,16 +18,19 @@ import java.util.Scanner;
  * 2. Shortest Job First Non-Preemptive (SJF Non-Preemptive)
  * 3. Round Robin
  * <p>
- * User enters:
- * - Number of processes
- * - For each: Process ID (int), Arrival Time (int), Burst Time (int)
- * - For Round Robin: Time Quantum
- * <p>
- * Outputs table with:
- * PID, Arrival, Burst, Completion, Turnaround, Waiting, plus averages.
+ * This application allows the user to simulate CPU scheduling algorithms by
+ * entering process details and selecting an algorithm. The results include
+ * process statistics such as completion time, turnaround time, and waiting time.
  */
 public class CpuSchedulingApp {
 
+    /**
+     * The main method serves as the entry point for the CPU Scheduling Simulator.
+     * It prompts the user to select a scheduling algorithm, input process details,
+     * and displays the scheduling results in a tabular format.
+     *
+     * @param args Command-line arguments (not used).
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -91,17 +94,29 @@ public class CpuSchedulingApp {
         TablePrinter.print(results);
     }
 
+    /**
+     * Reads an integer from the user input, prompting again if the input is invalid.
+     *
+     * @param sc The `Scanner` object used to read user input.
+     * @return The integer value entered by the user.
+     */
     private static int readInt(Scanner sc) {
         while (true) {
             try {
                 return sc.nextInt();
             } catch (InputMismatchException ex) {
-                sc.next(); // discard
+                sc.next(); // discard invalid input
                 System.out.print("Invalid integer. Try again: ");
             }
         }
     }
 
+    /**
+     * Converts a `CpuAlgo` enumeration value to a human-readable name.
+     *
+     * @param alg The `CpuAlgo` enumeration value representing the selected algorithm.
+     * @return A string representing the human-readable name of the algorithm.
+     */
     private static String algorithmReadableName(CpuAlgo alg) {
         return switch (alg) {
             case FCFS -> "First-Come First-Served (FCFS)";
