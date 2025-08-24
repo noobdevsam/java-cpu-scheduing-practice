@@ -125,3 +125,33 @@ public class CpuSchedulingApp {
         };
     }
 }
+
+/*
+Sample Input / Output (illustrative):
+
+CPU Scheduling Algorithms:
+1. FCFS
+2. SJF (Non-Preemptive)
+3. Round Robin
+Enter your choice (1/2/3): 1
+Enter number of processes: 4
+Enter process details (PID ArrivalTime BurstTime)
+Process 1: 1 0 5
+Process 2: 2 1 3
+Process 3: 3 2 8
+Process 4: 4 3 6
+
+Scheduling Algorithm: First-Come First-Served (FCFS)
+-----------------------------------------------------------
+PID  Arrival  Burst  Completion  Turnaround  Waiting
+-----------------------------------------------------------
+1    0        5      5           5           0
+2    1        3      8           7           4
+3    2        8      16          14          6
+4    3        6      22          19          13
+-----------------------------------------------------------
+[Average Turnaround Time = 11.25]
+[Average Waiting Time = 5.75]
+
+For Round Robin (time quantum e.g., 3) the order and completion times will differ.
+*/
