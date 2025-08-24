@@ -14,4 +14,16 @@ public class ProcessStats extends ProcessInput {
         this.waitingTime = this.turnaroundTime - getBurstTime();
     }
 
+    public int getCompletionTime() {
+        return completionTime;
+    }
+
+    public int getTurnaroundTime() {
+        return turnaroundTime;
+    }
+
+    public int getWaitingTime() {
+        return waitingTime;
+    }
+
 }
